@@ -1,7 +1,6 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
-import { AuthContext } from "@/context/AuthContext";
+import React, { useState } from "react";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -50,7 +49,7 @@ const Sidebar = () => {
     },
   ];
 
-  // const { title } = useContext(AuthContext);
+
 
   return (
     <div className="border-solid h-screen relative justify-between flex flex-col">
@@ -71,15 +70,6 @@ const Sidebar = () => {
                       />
             <span className={`text-xl font-bold text-orange-500 ${ isExpanded ? "block" : "hidden"}`}>-Shop</span>
           </Link>
-          {/* <Image
-            src="/logo2.png"
-            width={50}
-            height={50}
-            alt="CA-shop logo"
-          /> */}
-          {/* <button onClick={toggleSidebar} className="text-gray-500 hover:text-gray-700 focus:outline-nonabsolute -right-5 bottom-5 w-8 h-8 flex items-center justify-center rounded-full bg-white shadow-lg cursor-pointer">
-          <i className={`bx ${isExpanded ? 'bx-chevron-left' : 'bx-chevron-right'}`}></i>
-        </button> */}
         </div>
         <div className="mt-4 space-y-3">
           {sidebarLinks.map((v, i) => (

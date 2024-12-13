@@ -5,8 +5,7 @@ import Famous from "@/components/Famous";
 import Link from "next/link";
 
 
-const Home = async () => {
-  const images = [
+const Home = async () => {  const images = [
     {
       url: 'https://img.freepik.com/free-photo/laptop-rocks-table-arrangement_23-2149672637.jpg?uid=R154701608&ga=GA1.1.1184846028.1720037584&semt=sph',
       label: 'Shop Now',
@@ -26,7 +25,8 @@ const Home = async () => {
       url: 'https://img.freepik.com/free-photo/office-desk-with-laptop_23-2148821886.jpg?t=st=1720050235~exp=1720053835~hmac=022ddd96b9fced73059f6d7e31015f6820948a9a5bd7eaa8bf9bf7d45af0b27b&w=996',
       label: 'Shop Now',
       // description: 'Some representative placeholder content for the third slide.'
-    },
+    }
+,
   ];
 
   async function getData() {
@@ -83,9 +83,9 @@ const Home = async () => {
                 <Link
                 key={i}
                   href={`/singleproduct/${v._id}`}
-                  className=" mx-3 bg-gray-100  rounded-lg overflow-hidden shadow-lg max-w-sm transform duration-500 hover:-translate-y-2"
+                  className=" mx-3 bg-orange-100/10   overflow-hidden shadow-lg max-w-sm transform duration-500 hover:-translate-y-2"
                 >
-                  <div className="relative">
+                  <div className="relative object-contain  p-3">
                     <img
                       className="w-full h-56"
                       // src="https://images.pexels.com/photos/7989741/pexels-photo-7989741.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -98,16 +98,11 @@ const Home = async () => {
                   </div>
                   <div className="p-4">
                     <h3 className="text-lg font-medium mb-2 hover:text-orange-500 line-clamp-1">{v?.title}</h3>
-                    {/* <div
-                      className=" text-xs line-clamp-2"
-                      dangerouslySetInnerHTML={createMarkup(v?.desc)}
-                    /> */}
+                  
                     <div className="flex items-center justify-between mt-5 ">
                       <div className=" px-2 border-2 border-orange-200 rounded-md ">{v?.category?.title}</div>
                       <span className="font-bold text-lg "> RS.{v.price}</span>
-                      {/* <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                        Add to cart
-                      </button> */}
+                      
                     </div>
                   </div>
                 </Link>

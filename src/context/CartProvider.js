@@ -79,34 +79,6 @@ const CartProvider = ({ children }) => {
     setCartItems(copyItem);
 };
 
-//   const increaseItemQuantity = (ItemToAdd) => {
-//     var copyItem = [...cartItems];
-
-//     const IsItemCheckInCart = cartItems.find(
-//       (cartItem) => cartItem._id === ItemToAdd._id
-//     );
-
-//     if (IsItemCheckInCart) {
-//       copyItem = cartItems.map((cartItem) =>
-//         cartItem._id === ItemToAdd._id
-//           ? {
-//               ...cartItem,
-//               quantity: cartItem.quantity + 1,
-//               totalPrice: cartItem.totalPrice + cartItem.price,
-//             }
-//           : cartItem
-//       );
-//     } else {
-//       copyItem.push({
-//         ...ItemToAdd,
-//         quantity: 1,
-//         totalPrice: ItemToAdd.price,
-//       });
-//     }
-
-//     localStorage.setItem("cartItems", JSON.stringify(copyItem));
-//     setCartItems(copyItem);
-// };
 
 
   const RemoveSpecificItemFromCart = (_id) => {
@@ -139,7 +111,6 @@ const CartProvider = ({ children }) => {
         clearCart,
         decreaseItemQuantity,
         RemoveSpecificItemFromCart,
-        // increaseItemQuantity,
       }}
     >
       {children}

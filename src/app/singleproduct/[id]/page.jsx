@@ -24,6 +24,7 @@ const Page = ({ params }) => {
 
   const settings = {
     dots: true,
+    arrows:false,
     infinite: true,
     autoplay:true,
     autoplaySpeed: 2000,
@@ -79,20 +80,20 @@ const Page = ({ params }) => {
       <div className="lg:flex md:flex mb-5 gap-4 globalShadow rounded-xl pb-2">
         <div className="md:w-4/12">
           <div className="flex flex-col items-center mt-7 mb-5 mx-5">
-            <div className="flex justify-center border w-80 border-gray-300 mb-5">
+            <div className="flex justify-center object-contain p-6 border w-80 border-gray-30 mb-5 shadow-inner shadow-orange-400">
               <img
                 src={activeImg}
                 alt="Active item"
-                className="w-full h-72 max-w-md object-cover shadow-sm shadow-orange-400"
+                className="w-full h-72 max-w-md object-contain "
               />
             </div>
-            <div className="w-full max-w-md shadow-inner shadow-orange-300">
+            <div className="w-full max-w-md p-2 shadow-inner shadow-orange-300">
               <Slider {...settings}>
                 {product.images.map((v, i) => (
-                  <div key={i} className="p-2">
+                  <div key={i} className="p-1 w-20 h-20  object-cover">
                     <img
                       src={v}
-                      className="w-20 h-20 border border-orange-300 rounded-md cursor-pointer"
+                      className="w-16 h-20 p-3 border border-orange-300  rounded-md cursor-pointer"
                       alt={`Carousel item ${i}`}
                       onClick={() => setActiveImg(v)}
                     />
